@@ -4,7 +4,7 @@ Created on Tue Jul  2 22:23:56 2019
 """
 
 import json
-from pygal.maps.world import World
+from pygal_maps_world.maps import World
 from pygal.style import LightColorizedStyle as LCS, RotateStyle as RS
 from country_codes import get_country_code
 
