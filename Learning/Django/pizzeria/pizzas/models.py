@@ -11,4 +11,15 @@ class Pizza(models.Model):
 	
 class Topping(models.Model):
 	pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
-	name = models.TextField()
+	text = models.TextField()
+	date_added = models.DateTimeField(auto_now_add=True)
+	
+	class Meta:
+		verbose_name_plural = 'toppings'
+		
+	def __str__(self):
+		"""Return a string representation of the model."""
+		string = self.text[:50]
+		if len(self.text) > 50:
+			return string + "..."
+		return string
