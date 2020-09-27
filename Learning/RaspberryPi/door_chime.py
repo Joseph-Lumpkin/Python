@@ -18,6 +18,6 @@ try:
                 pygame.mixer.music.load("renai_circulation.mp3")
                 pygame.mixer.music.play()
                 print("input = false, music should be playing")
-        time.sleep(5)
+        time.sleep(.5)
 finally:
     GPIO.cleanup()
