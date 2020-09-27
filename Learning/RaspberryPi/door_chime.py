@@ -11,7 +11,7 @@ try:
         if GPIO.input(7):
             continue
         if GPIO.input(7) == False:
-            playsound('res/renai_circulation')
+            playsound('res/renai_circulation.mp3')
         time.sleep(10);
 finally:
     GPIO.cleanup()
