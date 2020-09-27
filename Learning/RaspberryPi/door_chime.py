@@ -4,8 +4,8 @@ import pygame
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.IN)
-pygame.mixer.init()
-pygame.mixer.music.load('renai_circulation.mp3')
+pygame.mixer.init()ls
+pygame.mixer.music.load('res/renai_circulation.mp3')
 
 try:
     while True:
