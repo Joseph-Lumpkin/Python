@@ -15,7 +15,7 @@ try:
         elif GPIO.input(7) == False:
             if pygame.mixer.music.get_busy() == False:
                 pygame.mixer.music.stop()
-                pygame.mixer.music.load("renai_circulation.mp3")
+                pygame.mixer.music.load("res/music/cyka.mp3")
                 pygame.mixer.music.play()
                 print("input = false, music should be playing")
         time.sleep(.5)
