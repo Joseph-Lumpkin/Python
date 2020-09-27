@@ -4,18 +4,23 @@ import pygame
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.IN)
+pygame.init()
+
+################
+door_chime = pygame.mixer.Sound("res/renai_circulation.wav")
+################
+
 pygame.mixer.init()
-pygame.mixer.music.load('res/renai_circulation.mp3')
 
 try:
     while True:
         if GPIO.input(7) == True:
             print("input = true")
-            pygame.mixer.music.stop
+            pygame.mixer.music.stop()
         if GPIO.input(7) == False:
+            pygame.mixer.Sound.play(door_chime)
             print("input = false, music should be playing")
-            if pygame.mixer.music.get_busy() == False:    
-                pygame.mixer.music.play()
+
         time.sleep(5)
 finally:
     GPIO.cleanup()
