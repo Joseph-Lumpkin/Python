@@ -22,5 +22,6 @@ try:
                     pygame.mixer.music.load("renai_circulation.mp3")
                     pygame.mixer.music.play()
                     print("Door Closed = false (door is open), playing music")
+        time.sleep(1)
 finally:
     GPIO.cleanup()
