@@ -17,7 +17,7 @@ try:
         if GPIO.input(7) == True:
             print("input = true")
             pygame.mixer.music.stop()
-        if GPIO.input(7) == False:
+        elif GPIO.input(7) == False:
             pygame.mixer.Sound.play(door_chime)
             print("input = false, music should be playing")
 
