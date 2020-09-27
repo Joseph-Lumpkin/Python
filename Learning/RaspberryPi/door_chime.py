@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-import playsound
+from playsound import playsound
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.IN)
