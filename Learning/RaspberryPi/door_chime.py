@@ -12,11 +12,10 @@ try:
         if GPIO.input(7) == True:
             print("input = true")
             pygame.mixer.music.stop
-            continue
         if GPIO.input(7) == False:
             print("input = false, music should be playing")
-            if pygame.mixer.music.get_busy() == True:
-                continue
-            pygame.mixer.music.play()
+            if pygame.mixer.music.get_busy() == False:    
+                pygame.mixer.music.play()
+        time.sleep(5)
 finally:
     GPIO.cleanup()
