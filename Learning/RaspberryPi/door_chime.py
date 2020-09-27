@@ -9,7 +9,7 @@ pygame.mixer.music.load('res/renai_circulation.mp3')
 
 try:
     while True:
-        if GPIO.input(7):
+        if GPIO.input(7) == True:
             print("input = true")
             pygame.mixer.music.stop
             continue
