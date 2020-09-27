@@ -10,14 +10,17 @@ pygame.mixer.music.load("renai_circulation.mp3")
 try:
     while True:
         if GPIO.input(7) == False:
-            print("Door Closed = true, stopping music")
-            pygame.mixer.music.stop()
-        elif GPIO.input(7) == True:
-            if pygame.mixer.music.get_busy() == False:
+            time.sleep(.5)
+            if GPIO.input(7) == False:
+                print("Door Closed = true, stopping music")
                 pygame.mixer.music.stop()
-                pygame.mixer.music.load("renai_circulation.mp3")
-                pygame.mixer.music.play()
-                print("Door Closed = false (door is open), playing music")
-        time.sleep(.5)
+        elif GPIO.input(7) == True:
+            time.sleep(.5)
+            if GPIO.input(7) == True:
+                if pygame.mixer.music.get_busy() == False:
+                    pygame.mixer.music.stop()
+                    pygame.mixer.music.load("renai_circulation.mp3")
+                    pygame.mixer.music.play()
+                    print("Door Closed = false (door is open), playing music")
 finally:
     GPIO.cleanup()
